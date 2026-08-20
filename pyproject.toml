@@ -1,0 +1,17 @@
+[project]
+name = "lightning-experimenter"
+version = "0.1.0"
+description = "Config-driven PyTorch Lightning experiment harness with local and SLURM dispatch"
+requires-python = ">=3.10"
+dependencies = ["lightning>=2.2", "torch", "pyyaml", "tensorboard"]
+
+[project.scripts]
+lexp = "lightning_experimenter.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tools.hatch.build.targets.wheel]
+packages = ["src/lightning_experimenter"]
+
